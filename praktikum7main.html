@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>pilih kotamu yuk</title>   
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function pilihkota(){
+             var propinsi=document.getElementById('seleksatu').value;
+            
+             if(propinsi=="JawaTengah"){
+                 var arr=['KOTA','Semarang','Pekalongan','Magelang','Surakarta'];
+             }
+             else if(propinsi=="JawaBarat"){
+                 var arr=['KOTA','Bandung','Depok','Banjar','Sukabumi','Bogor'];
+             }
+             else if(propinsi=="JawaTimur"){
+                 var arr=['KOTA','Kediri','Malang','Surabaya','Blitar','Jember'];
+             }
+             else if(propinsi=="DKIJakarta"){
+                 var arr=['KOTA','JakartaSelatan','JakartaPusat','JakartaTimur','JakartaBarat','Tangerang'];
+             }
+             else {
+                 var arr=['tidak ada kota di provinsi ini'];
+             }
+         
+             var string="";
+            
+             for(i=0;i<arr.length;i++)
+                {
+                    string=string+"<option value="+arr[i]+">"+arr[i]+"</option>";
+                }
+                document.getElementById("selekdua").innerHTML=string;
+             string="<select name='selekdua'>"+string+"</select>"
+             document.getElementById("selekdua").innerHTML=string;
+         }
+
+         function outputkota(){
+            var propinsi=document.getElementById('seleksatu').value;
+            var khota = document.getElementById('selekdua').value;
+            var completestring = "di provinsi " + propinsi + " ada kota " + khota;
+            
+            document.getElementById("katakata").innerHTML=completestring;
+         }
+
+    </script>
+</head>
+
+<body>
+  
+    <br>
+      <h1><b>PILIH PROVINSI DAN KOTA MU</b></h1>
+     
+      <div id="outer">
+          <br>
+          <div id="inner">
+
+              <div id="provinsi"> 
+                <h2><b>PILIH PROVINSI</b></h2>
+                <select name="seleksatu" id="seleksatu" onchange="pilihkota()">
+                    <option value="">PROVINSI</option>
+                    <option value="JawaTengah">Jawa Tengah</option>
+                    <option value="JawaBarat">Jawa Barat</option>
+                    <option value="JawaTimur">Jawa Timur</option>
+                    <option value="DKIJakarta">DKI Jakarta</option>
+                    <option value="JawaMakmur">Jawa Makmur</option>
+                    
+                </select>
+              </div>
+         
+        </div>
+
+
+
+        <div  id="inner"> 
+            <h2><b>PILIH KOTA</b></h2>
+            
+         
+            <div>
+                <select id="selekdua" onchange="outputkota()"><option>KOTA</option></select>
+            </div>
+            <br><br>
+            <br><br>
+            <div >
+                <table id="katakata">
+
+                </table>
+            </div>
+
+        </div>
+        
+        <br><br>
+
+       <div  id="inner">
+            <button id="hitam" class="button darkbutton"><b>dark Mode</b></button> 
+      
+       </div>
+       <h1><b>Farhan Nazara Udma</b></h1>
+      <h1><b>105218050</b></h1>
+     
+        </div>
+ 
+      
+       
+  
+    <script>
+        
+
+        var bodi = document.getElementsByTagName('body')[0];
+        var gelap = document.getElementById('hitam');
+        gelap.addEventListener('click', function(){
+            gelap.classList.toggle('siang');
+            bodi.classList.toggle('malem');
+        });
+
+    </script>
+   
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+ 
+</html>
